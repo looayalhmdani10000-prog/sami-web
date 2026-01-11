@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Request a Quote — Al-Buraq Logistics</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="Al-Buraq logo"></a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Book Your Transport</h1>
+    <p>Fill the form to request a quote or booking. You will receive confirmation by email or phone.</p>
+
+    <form id="booking-form" action="save_booking.php" method="POST">
+      <label>Full Name <input name="name" required></label>
+      <label>Email <input name="email" type="email" required></label>
+      <label>Phone <input name="phone" required></label>
+      <label>Pickup Date <input name="pickup_date" type="date" required></label>
+      <label>Pickup Time <input name="pickup_time" type="time"></label>
+      <label>Pickup Location <input name="pickup_location" required></label>
+      <label>Dropoff Location <input name="dropoff_location" required></label>
+      <label>Shipment Type
+        <select name="shipment_type">
+          <option>Palletized</option>
+          <option>Crated</option>
+          <option>Oversized</option>
+          <option>Hazardous</option>
+        </select>
+      </label>
+      <label>Weight (lbs) <input name="weight" type="number" step="any" required></label>
+      <label>Dimensions (L×W×H in inches) <input name="dimensions" placeholder="e.g. 48x40x60"></label>
+      <label>Number of Packages <input name="quantity" type="number" min="1" value="1"></label>
+      <label>Declared Value (USD) <input name="declared_value" type="number" step="0.01"></label>
+      <label>Special Handling / Notes <textarea name="notes"></textarea></label>
+
+      <button type="submit" class="button">Submit Request</button>
+      <p id="bookingResult" class="form-result" aria-live="polite"></p>
+    </form> 
+
+    <aside class="contact-card">
+      <h3>Need Help?</h3>
+      <p>Call Sami: <a href="tel:+14752227511">+1 (475) 222-7511</a><br>Email: samialir70@gmail.com</p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Al-Buraq</strong><br>
+        Owner: Sami Alhamdani<br>
+        <a href="tel:+14752227511">+1 (475) 222-7511</a><br>
+        samialir70@gmail.com
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
